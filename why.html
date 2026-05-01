@@ -1,9 +1,244 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Why Book With Us</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Book With Us | Lone Star Safari Advisors</title>
   <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+
+  <style>
+    :root {
+      --brown: #5A4632;
+      --gold: #B88A4A;
+      --tan: #E6C79C;
+      --cream: #F7F1E6;
+      --dark: #1F1A14;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    nav {
+      background: var(--brown);
+      padding: 16px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+    }
+
+    nav img {
+      height: 62px;
+      border-radius: 4px;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 26px;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover { color: var(--tan); }
+
+    .page-hero {
+      background: linear-gradient(rgba(31,26,20,0.78), rgba(31,26,20,0.78)), var(--brown);
+      color: var(--white);
+      text-align: center;
+      padding: 95px 20px;
+    }
+
+    .eyebrow {
+      color: var(--tan);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin: 0 0 18px;
+      font-weight: normal;
+    }
+
+    h2 {
+      font-size: 34px;
+      font-weight: normal;
+      margin: 0 0 18px;
+      color: var(--brown);
+    }
+
+    h3 {
+      font-size: 23px;
+      font-weight: normal;
+      color: var(--brown);
+      margin-top: 0;
+    }
+
+    .page-hero p {
+      max-width: 780px;
+      margin: auto;
+      font-size: 19px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 75px 20px;
+    }
+
+    .intro {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .split-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .panel {
+      background: var(--white);
+      padding: 34px;
+      border-top: 5px solid var(--gold);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+    }
+
+    ul {
+      padding-left: 22px;
+      margin-bottom: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .tan-band {
+      background: var(--tan);
+      padding: 75px 20px;
+      text-align: center;
+    }
+
+    .tan-band div {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .feature-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px;
+      margin-top: 55px;
+    }
+
+    .feature-card {
+      background: var(--white);
+      width: 320px;
+      padding: 32px;
+      border-top: 5px solid var(--gold);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+    }
+
+    .feature-card p {
+      margin-bottom: 0;
+    }
+
+    .commitment {
+      background: var(--white);
+      padding: 45px;
+      margin-top: 60px;
+      border-left: 6px solid var(--gold);
+      box-shadow: 0 12px 34px rgba(0,0,0,0.08);
+    }
+
+    .cta {
+      background: var(--brown);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .cta h2 {
+      color: var(--white);
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      text-decoration: none;
+      border-radius: 3px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 18px;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+      border: 2px solid var(--gold);
+    }
+
+    .btn:hover {
+      opacity: 0.88;
+    }
+
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 22px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 13px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .split-section {
+        grid-template-columns: 1fr;
+      }
+
+      .commitment {
+        padding: 30px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -19,64 +254,83 @@
   </div>
 </nav>
 
-<div class="container">
-  <h1>Why Book With Us</h1>
+<section class="page-hero">
+  <div class="eyebrow">Why Book With Us</div>
+  <h1>Confidence Before You Commit</h1>
+  <p>
+    Booking a safari overseas is a major decision. We help U.S. hunters avoid confusion, understand the real cost, and book with trusted outfitters.
+  </p>
+</section>
 
-  <!-- OPENING -->
-  <p style="max-width: 800px;">
-    Booking a safari in Africa isn’t simple. Between choosing the right outfitter, understanding pricing, and handling international logistics, it’s easy to make the wrong decision.
-    <br><br>
+<section class="container">
+  <p class="intro">
+    Between choosing the right outfitter, understanding pricing, and handling international logistics, it is easy to make the wrong decision.
     Lone Star Safari Advisors exists to make sure you don’t.
   </p>
 
-  <!-- PROBLEM -->
-  <h2 style="margin-top: 40px;">What Most Hunters Run Into</h2>
-  <ul>
-    <li>Not knowing which outfitters are actually reputable</li>
-    <li>Confusing or unclear pricing structures</li>
-    <li>Unexpected costs that show up later</li>
-    <li>Being left on their own once the booking is made</li>
-  </ul>
+  <div class="split-section">
+    <div class="panel">
+      <h2>What Most Hunters Run Into</h2>
+      <ul>
+        <li>Not knowing which outfitters are actually reputable</li>
+        <li>Confusing or unclear pricing structures</li>
+        <li>Unexpected costs that show up later</li>
+        <li>Being left on their own once the booking is made</li>
+      </ul>
+    </div>
 
-  <!-- SOLUTION -->
-  <h2 style="margin-top: 40px;">How We Help</h2>
-  <ul>
-    <li>Match you with vetted, proven outfitters in Tanzania</li>
-    <li>Break down the full cost upfront so there are no surprises</li>
-    <li>Guide you through travel, logistics, and preparation</li>
-    <li>Stay involved from booking through your return home</li>
-  </ul>
-
-  <!-- DIFFERENCE -->
-  <h2 style="margin-top: 40px;">A Different Approach</h2>
-  <p style="max-width: 800px;">
-    We don’t represent dozens of outfitters.  
-    <br><br>
-    We work with a small number of carefully selected partners so we can confidently stand behind every hunt we recommend.
-  </p>
-
-  <!-- VETERAN -->
-  <h2 style="margin-top: 40px;">Built on Trust</h2>
-  <p style="max-width: 800px;">
-    As a veteran-owned business, Lone Star Safari Advisors is built on accountability, attention to detail, and doing things the right way—principles that carry through every hunt we help plan.
-  </p>
-
-  <!-- COMMITMENT -->
-  <h2 style="margin-top: 40px;">Our Commitment</h2>
-  <p style="max-width: 800px;">
-    When you book through us, you’re not just getting a referral—you’re getting a guide through the entire process.  
-    <br><br>
-    From your first call to your return home, we make sure everything is handled the way it should be.
-  </p>
-
-  <!-- CTA -->
-  <div style="margin-top: 50px; text-align: center;">
-    <h2>Ready to Plan Your Safari?</h2>
-    <p>We’ll help you get it right from the start.</p>
-    <a href="contact.html" class="btn primary">Schedule a Call</a>
+    <div class="panel">
+      <h2>How We Help</h2>
+      <ul>
+        <li>Match you with vetted, proven outfitters in Tanzania</li>
+        <li>Break down the full cost upfront so there are no surprises</li>
+        <li>Guide you through travel, logistics, and preparation</li>
+        <li>Stay involved from booking through your return home</li>
+      </ul>
+    </div>
   </div>
 
-</div>
+  <div class="commitment">
+    <h2>A Different Approach</h2>
+    <p>
+      We don’t represent dozens of outfitters. We work with a small number of carefully selected partners so we can confidently stand behind every hunt we recommend.
+    </p>
+  </div>
+</section>
+
+<section class="tan-band">
+  <div>
+    <h2>Built on Trust</h2>
+    <p>
+      As a veteran-owned business, Lone Star Safari Advisors is built on accountability, attention to detail, and doing things the right way—principles that carry through every hunt we help plan.
+    </p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="feature-row">
+    <div class="feature-card">
+      <h3>Selective Partners</h3>
+      <p>We focus on quality over quantity and only recommend hunts we can stand behind.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Clear Expectations</h3>
+      <p>We help you understand the full process before you send a deposit or commit to a trip.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Ongoing Support</h3>
+      <p>You are not simply handed off. We stay involved from the first call through your return home.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Ready to Plan Your Safari?</h2>
+  <p>We’ll help you get it right from the start.</p>
+  <a href="contact.html" class="btn btn-primary">Schedule a Call</a>
+</section>
 
 <footer>
   © 2026 Lone Star Safari Advisors. All rights reserved.
