@@ -2,72 +2,89 @@
 <html>
 <head>
   <title>Lone Star Safari Advisors</title>
-  <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
 </head>
 
-<body>
+<body style="margin:0; font-family: Arial, sans-serif;">
 
-<nav>
-  <img src="assets/logo.jpg" alt="Lone Star Safari Advisors Logo">
+<!-- NAV -->
+<nav style="background-color:#1f1a14; padding:15px 30px; display:flex; align-items:center; justify-content:space-between;">
+  <img src="assets/logo.jpg" alt="Logo" style="height:50px;">
   <div>
-    <a href="index.html">Home</a>
-    <a href="hunts.html">Hunts</a>
-    <a href="why.html">Why Us</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" style="color:white; margin:0 15px; text-decoration:none;">Home</a>
+    <a href="hunts.html" style="color:white; margin:0 15px; text-decoration:none;">Hunts</a>
+    <a href="why.html" style="color:white; margin:0 15px; text-decoration:none;">Why Us</a>
+    <a href="about.html" style="color:white; margin:0 15px; text-decoration:none;">About</a>
+    <a href="contact.html" style="color:white; margin:0 15px; text-decoration:none;">Contact</a>
   </div>
 </nav>
 
-<section class="hero hero-image" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('assets/cape-buffalo-hero.webp');">
-  <div class="hero-content">
-    <h1>Your Trusted Texas Connection to Tanzania Safari Hunts</h1>
-    <p>
+<!-- HERO -->
+<section style="min-height:650px; display:flex; align-items:center; justify-content:center; text-align:center; color:white;
+background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('assets/cape-buffalo-hero.webp');
+background-size:cover; background-position:center;">
+  
+  <div style="max-width:800px;">
+    <h1 style="font-size:42px;">Your Trusted Texas Connection to Tanzania Safari Hunts</h1>
+    <p style="font-size:18px; margin-top:15px;">
       Plan your first African safari with vetted outfitters, honest guidance,
       and support from the first call through your return home.
     </p>
-    <a href="contact.html" class="btn primary">Book Consultation</a>
-    <a href="hunts.html" class="btn secondary">View Hunts</a>
+
+    <div style="margin-top:25px;">
+      <a href="contact.html" style="background:#c49a6c; color:white; padding:12px 20px; text-decoration:none; margin-right:10px;">Book Consultation</a>
+      <a href="hunts.html" style="border:2px solid white; color:white; padding:12px 20px; text-decoration:none;">View Hunts</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- INTRO (TAN SECTION) -->
+<section style="background-color:#d2b48c; padding:60px 20px; text-align:center;">
+  <div style="max-width:800px; margin:auto;">
+    <h2>Safari Planning Built on Trust</h2>
+    <p>
+      Booking a safari overseas can feel overwhelming. Lone Star Safari Advisors helps U.S. hunters understand the process,
+      compare realistic hunt options, and book with confidence.
+    </p>
   </div>
 </section>
 
-<section class="container intro">
-  <h2>Safari Planning Built on Trust</h2>
-  <p>
-    Booking a safari overseas can feel overwhelming. Lone Star Safari Advisors helps U.S. hunters understand the process,
-    compare realistic hunt options, and book with confidence.
-  </p>
-</section>
+<!-- CARDS -->
+<section style="padding:60px 20px;">
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; max-width:1100px; margin:auto;">
 
-<section class="container">
-  <div class="cards">
-    <div class="card">
+    <div style="background:white; padding:20px; width:300px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
       <h3>Vetted Outfitters</h3>
       <p>We work with a small number of trusted Tanzania partners so every recommendation has a purpose.</p>
     </div>
 
-    <div class="card">
+    <div style="background:white; padding:20px; width:300px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
       <h3>Clear Pricing</h3>
       <p>We help explain base safari costs, trophy fees, travel expenses, and what to expect before you commit.</p>
     </div>
 
-    <div class="card">
+    <div style="background:white; padding:20px; width:300px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
       <h3>Start-to-Finish Support</h3>
       <p>From choosing the right hunt to preparing for travel, we stay involved through the entire process.</p>
     </div>
+
   </div>
 </section>
 
-<section class="band">
+<!-- CTA BAND -->
+<section style="background-color:#1f1a14; color:white; text-align:center; padding:60px 20px;">
   <h2>Ready to Hunt Africa the Right Way?</h2>
   <p>
     Whether you are considering Cape buffalo, plains game, or a custom Tanzania safari,
     we’ll help you find the right fit.
   </p>
-  <a href="contact.html" class="btn primary">Schedule a Call</a>
+
+  <a href="contact.html" style="background:#c49a6c; color:white; padding:12px 20px; text-decoration:none;">Schedule a Call</a>
 </section>
 
-<footer>
+<!-- FOOTER -->
+<footer style="background-color:#1f1a14; color:white; text-align:center; padding:20px;">
   © 2026 Lone Star Safari Advisors. All rights reserved.
 </footer>
 
