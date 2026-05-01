@@ -1,9 +1,264 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Tanzania Hunts</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanzania Hunts | Lone Star Safari Advisors</title>
   <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+
+  <style>
+    :root {
+      --brown: #5A4632;
+      --gold: #B88A4A;
+      --tan: #E6C79C;
+      --cream: #F7F1E6;
+      --dark: #1F1A14;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    nav {
+      background: var(--brown);
+      padding: 16px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+    }
+
+    nav img {
+      height: 62px;
+      border-radius: 4px;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 26px;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--tan);
+    }
+
+    .page-hero {
+      background: linear-gradient(rgba(31,26,20,0.78), rgba(31,26,20,0.78)), var(--brown);
+      color: var(--white);
+      text-align: center;
+      padding: 95px 20px;
+    }
+
+    .eyebrow {
+      color: var(--tan);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin: 0 0 18px;
+      font-weight: normal;
+    }
+
+    h2 {
+      font-size: 34px;
+      font-weight: normal;
+      margin: 0 0 18px;
+      color: var(--brown);
+    }
+
+    h3 {
+      font-size: 23px;
+      font-weight: normal;
+      color: var(--brown);
+      margin-top: 0;
+    }
+
+    .page-hero p {
+      max-width: 780px;
+      margin: auto;
+      font-size: 19px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 75px 20px;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 850px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px;
+      margin-top: 45px;
+    }
+
+    .card {
+      background: var(--white);
+      width: 320px;
+      padding: 32px;
+      border-top: 5px solid var(--gold);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+    }
+
+    .card p {
+      margin-bottom: 0;
+      font-size: 16px;
+    }
+
+    .featured {
+      background: var(--white);
+      margin-top: 70px;
+      padding: 45px;
+      border-top: 6px solid var(--gold);
+      box-shadow: 0 12px 34px rgba(0,0,0,0.09);
+    }
+
+    .featured-subtitle {
+      color: var(--brown);
+      font-size: 18px;
+      margin-top: -10px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      margin-top: 30px;
+    }
+
+    ul, ol {
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .price-box {
+      background: var(--tan);
+      padding: 26px;
+      margin-top: 30px;
+      border-left: 5px solid var(--gold);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      text-decoration: none;
+      border-radius: 3px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 18px;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+      border: 2px solid var(--gold);
+    }
+
+    .btn:hover {
+      opacity: 0.88;
+    }
+
+    .info-section {
+      background: var(--tan);
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .info-section div {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .steps {
+      background: var(--cream);
+      padding: 75px 20px;
+    }
+
+    .steps-inner {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .cta {
+      background: var(--brown);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .cta h2 {
+      color: var(--white);
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+      font-size: 18px;
+    }
+
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 22px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 13px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .featured {
+        padding: 30px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -19,22 +274,23 @@
   </div>
 </nav>
 
-<div class="container">
-  <h1>Tanzania Hunts</h1>
+<section class="page-hero">
+  <div class="eyebrow">Tanzania Safari Hunts</div>
+  <h1>Hunts Built Around Your Goals</h1>
+  <p>
+    Carefully selected safari options for U.S. hunters looking for authentic, well-run Tanzania hunts with clear guidance from start to finish.
+  </p>
+</section>
 
-  <!-- INTRO -->
-  <p style="max-width: 800px; margin-bottom: 40px;">
-    We offer a small selection of carefully chosen safari experiences in Tanzania, designed for U.S. hunters looking for authentic, well-run hunts.
-    <br><br>
-    Every safari is matched to your goals, experience level, and budget—so you know you're getting the right hunt from the start.
+<section class="container">
+  <p class="intro">
+    We offer a small selection of carefully chosen safari experiences in Tanzania. Every hunt is matched to your goals, experience level, and budget—so you know you’re getting the right safari from the start.
   </p>
 
-  <!-- CATEGORIES -->
   <div class="cards">
-
     <div class="card">
       <h3>Plains Game Hunts</h3>
-      <p>Classic African species including kudu, zebra, wildebeest, impala, and more.</p>
+      <p>Classic African species including kudu, zebra, wildebeest, impala, warthog, and more.</p>
     </div>
 
     <div class="card">
@@ -44,25 +300,23 @@
 
     <div class="card">
       <h3>Dangerous Game Hunts</h3>
-      <p>Leopard, lion, and full bag safaris—tailored based on experience and availability.</p>
+      <p>Leopard, lion, and full-bag safaris tailored around experience and availability.</p>
     </div>
 
     <div class="card">
       <h3>First-Time Safari Packages</h3>
-      <p>Designed specifically for hunters planning their first trip to Africa.</p>
+      <p>Designed for hunters planning their first trip to Africa and wanting the process done right.</p>
     </div>
 
     <div class="card">
       <h3>Custom Safaris</h3>
       <p>We match you with the right outfitter and hunt based on your exact goals.</p>
     </div>
-
   </div>
 
-  <!-- FEATURED HUNT -->
-  <div class="card" style="margin-top: 50px;">
+  <div class="featured">
     <h2>First-Time Tanzania Buffalo Safari</h2>
-    <p><em>7–9 Day Classic African Hunt</em></p>
+    <p class="featured-subtitle"><em>7–9 Day Classic African Hunt</em></p>
 
     <h3>Overview</h3>
     <p>
@@ -70,65 +324,71 @@
       This hunt is designed for hunters looking to pursue Cape buffalo alongside classic plains game in a traditional, fully guided setting.
     </p>
 
-    <h3>What’s Included</h3>
-    <ul>
-      <li>7–9 days of guided hunting</li>
-      <li>1–2 Cape buffalo (depending on hunt length)</li>
-      <li>Additional plains game opportunities</li>
-      <li>Professional hunter (PH), trackers, and vehicles</li>
-      <li>Luxury tented camp accommodations</li>
-      <li>Meals, drinks, and full camp service</li>
-      <li>Government permits and conservation fees</li>
-      <li>Trophy prep, dip & pack, and export handling</li>
-    </ul>
+    <div class="two-column">
+      <div>
+        <h3>What’s Included</h3>
+        <ul>
+          <li>7–9 days of guided hunting</li>
+          <li>1–2 Cape buffalo depending on hunt length</li>
+          <li>Additional plains game opportunities</li>
+          <li>Professional hunter, trackers, and vehicles</li>
+          <li>Luxury tented camp accommodations</li>
+          <li>Meals, drinks, and full camp service</li>
+          <li>Government permits and conservation fees</li>
+          <li>Trophy prep, dip & pack, and export handling</li>
+        </ul>
+      </div>
 
-    <h3>What’s Not Included</h3>
-    <ul>
-      <li>International flights</li>
-      <li>Trophy fees (based on animals taken)</li>
-      <li>Travel to camp (charter or vehicle)</li>
-      <li>Tips and personal expenses</li>
-    </ul>
+      <div>
+        <h3>What’s Not Included</h3>
+        <ul>
+          <li>International flights</li>
+          <li>Trophy fees based on animals taken</li>
+          <li>Travel to camp by charter or vehicle</li>
+          <li>Tips and personal expenses</li>
+        </ul>
+      </div>
+    </div>
 
-    <h3>Investment</h3>
-    <p>
-      Base safari cost ranges from <strong>$20,000 – $27,000</strong>.
-      <br>
-      Most clients spend <strong>$25,000 – $35,000 total</strong> depending on travel and animals taken.
-    </p>
+    <div class="price-box">
+      <h3>Investment</h3>
+      <p>
+        Base safari cost ranges from <strong>$20,000–$27,000</strong>.
+        Most clients spend <strong>$25,000–$35,000 total</strong> depending on travel and animals taken.
+      </p>
+    </div>
 
-    <a href="contact.html" class="btn primary">Schedule a Call</a>
+    <a href="contact.html" class="btn btn-primary">Schedule a Call</a>
   </div>
+</section>
 
-  <!-- COST EXPLANATION -->
-  <div style="margin-top: 50px;">
+<section class="info-section">
+  <div>
     <h2>What Does a Tanzania Safari Cost?</h2>
-    <p style="max-width: 800px;">
+    <p>
       Most first-time safaris fall between <strong>$25,000–$35,000 all-in</strong>.
-      <br><br>
       Final cost depends on hunt length, species, and travel logistics. We walk you through the full breakdown so there are no surprises.
     </p>
   </div>
+</section>
 
-  <!-- HOW IT WORKS -->
-  <div style="margin-top: 50px;">
+<section class="steps">
+  <div class="steps-inner">
     <h2>How It Works</h2>
     <ol>
-      <li>Schedule a call to discuss your goals and experience</li>
-      <li>We recommend the right safari for you</li>
-      <li>Secure your dates with a deposit</li>
-      <li>We guide you through travel, preparation, and logistics</li>
+      <li>Schedule a call to discuss your goals, budget, and hunting experience.</li>
+      <li>We recommend the right safari based on what you are looking for.</li>
+      <li>Secure your dates with a deposit once the hunt is selected.</li>
+      <li>We guide you through travel, preparation, and logistics before departure.</li>
     </ol>
   </div>
+</section>
 
-  <!-- CTA -->
-  <div style="margin-top: 50px; text-align: center;">
-    <h2>Not Sure Which Hunt Is Right?</h2>
-    <p>We’ll match you with the best safari based on your goals and experience.</p>
-    <a href="contact.html" class="btn primary">Get Started</a>
-  </div>
-
-</div>
+<section class="cta">
+  <h2>Not Sure Which Hunt Is Right?</h2>
+  <p>We’ll match you with the best safari based on your goals, experience, and budget.</p>
+  <a href="contact.html" class="btn btn-primary">Get Started</a>
+</section>
 
 <footer>
   © 2026 Lone Star Safari Advisors. All rights reserved.
