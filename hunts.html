@@ -16,9 +16,7 @@
       --white: #ffffff;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -51,9 +49,7 @@
       text-transform: uppercase;
     }
 
-    nav a:hover {
-      color: var(--tan);
-    }
+    nav a:hover { color: var(--tan); }
 
     .page-hero {
       background: linear-gradient(rgba(31,26,20,0.78), rgba(31,26,20,0.78)), var(--brown);
@@ -110,36 +106,60 @@
       font-size: 18px;
     }
 
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 28px;
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
       margin-top: 45px;
     }
 
-    .card {
+    .package-card {
       background: var(--white);
-      width: 320px;
-      padding: 32px;
+      padding: 28px;
       border-top: 5px solid var(--gold);
       box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: 0.2s ease;
+      min-height: 220px;
     }
 
-    .card p {
+    .package-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.12);
+    }
+
+    .package-card.active {
+      background: var(--tan);
+    }
+
+    .package-card p {
       margin-bottom: 0;
       font-size: 16px;
     }
 
-    .featured {
+    .package-card span {
+      display: block;
+      margin-top: 18px;
+      color: var(--brown);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .package-detail {
+      display: none;
       background: var(--white);
-      margin-top: 70px;
+      margin-top: 35px;
       padding: 45px;
       border-top: 6px solid var(--gold);
       box-shadow: 0 12px 34px rgba(0,0,0,0.09);
     }
 
-    .featured-subtitle {
+    .package-detail.active {
+      display: block;
+    }
+
+    .package-subtitle {
       color: var(--brown);
       font-size: 18px;
       margin-top: -10px;
@@ -184,9 +204,7 @@
       border: 2px solid var(--gold);
     }
 
-    .btn:hover {
-      opacity: 0.88;
-    }
+    .btn:hover { opacity: 0.88; }
 
     .info-section {
       background: var(--tan);
@@ -216,9 +234,7 @@
       padding: 80px 20px;
     }
 
-    .cta h2 {
-      color: var(--white);
-    }
+    .cta h2 { color: var(--white); }
 
     .cta p {
       max-width: 700px;
@@ -235,6 +251,12 @@
       letter-spacing: 0.5px;
     }
 
+    @media (max-width: 1000px) {
+      .package-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
@@ -246,15 +268,17 @@
         font-size: 13px;
       }
 
-      h1 {
-        font-size: 38px;
+      h1 { font-size: 38px; }
+
+      .package-grid {
+        grid-template-columns: 1fr;
       }
 
       .two-column {
         grid-template-columns: 1fr;
       }
 
-      .featured {
+      .package-detail {
         padding: 30px;
       }
     }
@@ -284,90 +308,249 @@
 
 <section class="container">
   <p class="intro">
-    We offer a small selection of carefully chosen safari experiences in Tanzania. Every hunt is matched to your goals, experience level, and budget—so you know you’re getting the right safari from the start.
+    Choose from our featured Tanzania safari options below. Each package is designed around a different level of experience, budget, and hunting goal.
   </p>
 
-  <div class="cards">
-    <div class="card">
-      <h3>Plains Game Hunts</h3>
-      <p>Classic African species including kudu, zebra, wildebeest, impala, warthog, and more.</p>
+  <div class="package-grid">
+    <div class="package-card active" onclick="showPackage('buffalo', this)">
+      <h3>First-Time Tanzania Buffalo Safari</h3>
+      <p>7–9 day classic African hunt built around Cape buffalo and plains game.</p>
+      <span>View Package</span>
     </div>
 
-    <div class="card">
-      <h3>Cape Buffalo Safaris</h3>
-      <p>True dangerous-game hunting in remote, wild African concessions.</p>
+    <div class="package-card" onclick="showPackage('dangerous', this)">
+      <h3>Selous Dangerous Game Safari</h3>
+      <p>12–14 day hunt for buffalo, hippo, crocodile, leopard, and plains game.</p>
+      <span>View Package</span>
     </div>
 
-    <div class="card">
-      <h3>Dangerous Game Hunts</h3>
-      <p>Leopard, lion, and full-bag safaris tailored around experience and availability.</p>
+    <div class="package-card" onclick="showPackage('fullbag', this)">
+      <h3>Premier Tanzania Full-Bag Safari</h3>
+      <p>16–21 day high-end safari for lion, leopard, buffalo, elephant, and more.</p>
+      <span>View Package</span>
     </div>
 
-    <div class="card">
-      <h3>First-Time Safari Packages</h3>
-      <p>Designed for hunters planning their first trip to Africa and wanting the process done right.</p>
-    </div>
-
-    <div class="card">
-      <h3>Custom Safaris</h3>
-      <p>We match you with the right outfitter and hunt based on your exact goals.</p>
+    <div class="package-card" onclick="showPackage('custom', this)">
+      <h3>Custom Tanzania Safari</h3>
+      <p>Built around your exact goals, budget, species, and experience level.</p>
+      <span>View Package</span>
     </div>
   </div>
 
-  <div class="featured">
+  <div id="buffalo" class="package-detail active">
     <h2>First-Time Tanzania Buffalo Safari</h2>
-    <p class="featured-subtitle"><em>7–9 Day Classic African Hunt</em></p>
+    <p class="package-subtitle"><em>7–9 Day Classic African Hunt</em></p>
 
-    <h3>Overview</h3>
     <p>
-      Experience a true East African safari in the wild Selous ecosystem—one of the largest and most untouched hunting areas in Africa.
-      This hunt is designed for hunters looking to pursue Cape buffalo alongside classic plains game in a traditional, fully guided setting.
+      Experience a traditional East African buffalo safari in the Selous ecosystem, one of Tanzania’s most iconic hunting regions.
+      This package is ideal for hunters planning their first African safari and looking for a strong mix of dangerous game and plains game.
     </p>
 
     <div class="two-column">
       <div>
-        <h3>What’s Included</h3>
+        <h3>Best For</h3>
         <ul>
-          <li>7–9 days of guided hunting</li>
-          <li>1–2 Cape buffalo depending on hunt length</li>
-          <li>Additional plains game opportunities</li>
-          <li>Professional hunter, trackers, and vehicles</li>
-          <li>Luxury tented camp accommodations</li>
-          <li>Meals, drinks, and full camp service</li>
-          <li>Government permits and conservation fees</li>
-          <li>Trophy prep, dip & pack, and export handling</li>
+          <li>First-time Africa hunters</li>
+          <li>Cape buffalo</li>
+          <li>Classic safari experience</li>
+        </ul>
+
+        <h3>Available Options</h3>
+        <ul>
+          <li>7-Day Buffalo Safari: 1 Cape buffalo + plains game opportunities</li>
+          <li>9-Day Buffalo Safari: 2 Cape buffalo + plains game opportunities</li>
         </ul>
       </div>
 
       <div>
-        <h3>What’s Not Included</h3>
+        <h3>Available Species May Include</h3>
         <ul>
-          <li>International flights</li>
-          <li>Trophy fees based on animals taken</li>
-          <li>Travel to camp by charter or vehicle</li>
-          <li>Tips and personal expenses</li>
+          <li>Cape buffalo</li>
+          <li>Hartebeest</li>
+          <li>Impala</li>
+          <li>Warthog</li>
+          <li>Wildebeest</li>
+          <li>Zebra</li>
         </ul>
       </div>
     </div>
 
     <div class="price-box">
-      <h3>Investment</h3>
+      <h3>Base Safari Cost</h3>
       <p>
-        Base safari cost ranges from <strong>$20,000–$27,000</strong>.
-        Most clients spend <strong>$25,000–$35,000 total</strong> depending on travel and animals taken.
+        <strong>7-Day:</strong> $20,000 1:1 / $18,000 2:1<br>
+        <strong>9-Day:</strong> $27,000 1:1 / $24,000 2:1
+      </p>
+      <p>
+        Most clients should expect a higher all-in total once trophy fees, travel to camp, tips, and personal expenses are included.
       </p>
     </div>
 
     <a href="contact.html" class="btn btn-primary">Schedule a Call</a>
   </div>
+
+  <div id="dangerous" class="package-detail">
+    <h2>Selous Dangerous Game Safari</h2>
+    <p class="package-subtitle"><em>12–14 Day Buffalo, Hippo, Crocodile & Leopard Hunt</em></p>
+
+    <p>
+      This package is designed for hunters wanting a more serious dangerous game experience while still keeping the safari focused and manageable.
+      It offers the opportunity to pursue buffalo, hippo, crocodile, and plains game, with the 14-day option adding leopard and a wider species list.
+    </p>
+
+    <div class="two-column">
+      <div>
+        <h3>Best For</h3>
+        <ul>
+          <li>Experienced hunters</li>
+          <li>Dangerous game</li>
+          <li>Leopard-focused safari</li>
+        </ul>
+
+        <h3>Available Options</h3>
+        <ul>
+          <li>12-Day Safari: Buffalo, hippo, crocodile, and plains game</li>
+          <li>14-Day Safari: Leopard, buffalo, hippo, crocodile, and plains game</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Available Species May Include</h3>
+        <ul>
+          <li>Cape buffalo</li>
+          <li>Crocodile</li>
+          <li>Hippo</li>
+          <li>Leopard</li>
+          <li>Kudu</li>
+          <li>Sable</li>
+          <li>Waterbuck</li>
+          <li>Wildebeest</li>
+          <li>Zebra</li>
+          <li>Warthog</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="price-box">
+      <h3>Base Safari Cost</h3>
+      <p>
+        <strong>12-Day:</strong> $36,000 1:1 / $32,000 2:1<br>
+        <strong>14-Day:</strong> $47,000 1:1
+      </p>
+      <p>
+        Trophy fees are separate and depend on animals taken. Example trophy fees include buffalo, hippo, crocodile, leopard, and kudu.
+      </p>
+    </div>
+
+    <a href="contact.html" class="btn btn-primary">Inquire About Availability</a>
+  </div>
+
+  <div id="fullbag" class="package-detail">
+    <h2>Premier Tanzania Full-Bag Safari</h2>
+    <p class="package-subtitle"><em>16–21 Day Lion, Leopard, Buffalo & Full Dangerous Game Hunt</em></p>
+
+    <p>
+      This is the premium Tanzania safari option for hunters looking for a true once-in-a-lifetime experience.
+      These hunts are built around major dangerous game opportunities, including lion, leopard, buffalo, and, on the 21-day package, elephant.
+    </p>
+
+    <div class="two-column">
+      <div>
+        <h3>Best For</h3>
+        <ul>
+          <li>High-end clients</li>
+          <li>Serious dangerous game hunters</li>
+          <li>Full-bag Tanzania safari experience</li>
+        </ul>
+
+        <h3>Available Options</h3>
+        <ul>
+          <li>16-Day Safari: Lion, leopard, buffalo, and plains game</li>
+          <li>21-Day Classic Full-Bag Safari: Lion, leopard, elephant, buffalo, and extensive plains game</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Available Species May Include</h3>
+        <ul>
+          <li>Lion</li>
+          <li>Leopard</li>
+          <li>Elephant</li>
+          <li>Cape buffalo</li>
+          <li>Crocodile</li>
+          <li>Hippo</li>
+          <li>Kudu</li>
+          <li>Sable</li>
+          <li>Eland</li>
+          <li>Plains game</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="price-box">
+      <h3>Base Safari Cost</h3>
+      <p>
+        <strong>16-Day:</strong> $60,000 1:1 / $55,000 2:1<br>
+        <strong>21-Day:</strong> $80,000 1:1 / $73,000 2:1
+      </p>
+      <p>
+        Restrictions may apply on some species for 2:1 hunts. Trophy fees are separate and depend on animals taken.
+      </p>
+    </div>
+
+    <a href="contact.html" class="btn btn-primary">Request Consultation</a>
+  </div>
+
+  <div id="custom" class="package-detail">
+    <h2>Custom Tanzania Safari</h2>
+    <p class="package-subtitle"><em>Built Around Your Goals</em></p>
+
+    <p>
+      Not every hunter fits into a standard package. If you are looking for a specific species, budget range, timeframe, or experience level,
+      we can help match you with the right safari and outfitter.
+    </p>
+
+    <div class="two-column">
+      <div>
+        <h3>Best For</h3>
+        <ul>
+          <li>Hunters with specific species goals</li>
+          <li>Clients comparing multiple safari options</li>
+          <li>Families or observers joining the hunt</li>
+          <li>Those unsure where to start</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>We Help Build Around</h3>
+        <ul>
+          <li>Target species</li>
+          <li>Desired travel year</li>
+          <li>Budget</li>
+          <li>Experience level</li>
+          <li>Travel logistics</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="price-box">
+      <h3>Custom Planning</h3>
+      <p>
+        Pricing depends on hunt length, species, outfitter availability, and travel logistics.
+        We’ll help you understand realistic options before you commit.
+      </p>
+    </div>
+
+    <a href="contact.html" class="btn btn-primary">Build My Safari</a>
+  </div>
 </section>
 
 <section class="info-section">
   <div>
-    <h2>What Does a Tanzania Safari Cost?</h2>
+    <h2>What’s Typically Included?</h2>
     <p>
-      Most first-time safaris fall between <strong>$25,000–$35,000 all-in</strong>.
-      Final cost depends on hunt length, species, and travel logistics. We walk you through the full breakdown so there are no surprises.
+      Packages may include luxury tented camp, meals and drinks, professional hunter, trackers, hunting vehicles,
+      permit fees, concession fees, conservation fees, trophy field prep, dip & pack, WiFi, and airport assistance.
     </p>
   </div>
 </section>
@@ -393,6 +576,19 @@
 <footer>
   © 2026 Lone Star Safari Advisors. All rights reserved.
 </footer>
+
+<script>
+  function showPackage(packageId, clickedCard) {
+    const packages = document.querySelectorAll('.package-detail');
+    const cards = document.querySelectorAll('.package-card');
+
+    packages.forEach(pkg => pkg.classList.remove('active'));
+    cards.forEach(card => card.classList.remove('active'));
+
+    document.getElementById(packageId).classList.add('active');
+    clickedCard.classList.add('active');
+  }
+</script>
 
 </body>
 </html>
